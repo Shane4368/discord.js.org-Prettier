@@ -1,0 +1,70 @@
+input[type='checkbox']:not(:checked) {
+    background-color: inherit !important;
+}
+
+.dark {
+    color-scheme: dark;
+}
+
+/* Table head */
+thead.bg-discord-blurple-500 {
+    background-color: #4752c4;
+}
+
+.prose thead {
+    border-bottom-width: 0 !important;
+}
+
+/* codeblock */
+.prose pre {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.dark .dark\:prose-light pre,
+.dark .dark\:prose-light code {
+    background-color: #191919 !important;
+}
+
+.dark .dark\:text-gray-300:not(:hover) {
+    color: #9ca3af !important;
+}
+
+/* Horizontal gradient divider */
+.w-full.pr-32.lg\:pr-96 {
+    display: none;
+}
+
+.scroll-to {
+    margin-top: 3.5rem;
+}
+
+.scroll-to:hover {
+    outline-offset: 0.9rem;
+    outline-width: 0.5rem;
+    outline-style: solid;
+    outline-color: #ededed;
+}
+
+.dark .scroll-to:hover {
+    outline-color: #191919;
+}
+
+.scroll-to h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.scroll-to .pt-6 {
+    padding-top: 0;
+}
+
+/* Table margin */
+.overflow-x-auto.lg\:custom-scroll.border.dark\:border-gray-600.rounded-md.mt-2.mb-8 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+a[aria-label='Go to source'] {
+    margin-top: 0;
+}
