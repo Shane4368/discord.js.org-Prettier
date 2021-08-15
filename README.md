@@ -10,4 +10,9 @@ A slightly better version of discord.js' website tailored to myself.
 - [x] Subtle member outlines
 
 ## Preview
-![screenshot](images/screenshot.png)
+![screenshot-dark](images/screenshot-dark.png)
+*Screenshot: Dark*
+<br><br>
+
+![screenshot-light](images/screenshot-light.png)
+*Screenshot: Light*
