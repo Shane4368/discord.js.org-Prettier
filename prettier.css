@@ -2,13 +2,108 @@ input[type='checkbox']:not(:checked) {
     background-color: inherit !important;
 }
 
+body {
+    background-color: #e2e3e5 !important;
+    color: #111827;
+}
+
+header.bg-discord-blurple-560,
+footer.bg-discord-blurple-560 {
+    background-color: inherit;
+}
+
+header *,
+footer * {
+    color: inherit !important;
+}
+
+header nav>a.bg-discord-blurple-600,
+header nav>a:hover,
+header button:hover {
+    color: white !important;
+}
+
+header #search {
+    background-color: white;
+    color: inherit;
+}
+
+header #search:focus {
+    box-shadow: none;
+}
+
 .dark {
     color-scheme: dark;
 }
 
-/* Table head */
+.dark body {
+    background-color: #171717 !important;
+    color: #e5e7eb;
+}
+
+.dark header #search {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+
+/* Search results flyout (Light) */
+header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md {
+    border: 1px solid #e2e3e5;
+    overflow: hidden;
+}
+
+header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul {
+    background-color: white;
+    color: #374151;
+}
+
+header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul>li:hover {
+    background-color: #2d347d;
+    color: white !important;
+    box-shadow: none;
+}
+
+header .dark\:even\:bg-discord-blurple-630:nth-child(even) {
+    background-color: #e2e3e5;
+}
+
+/* Search results flyout (Dark) */
+.dark header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md {
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.dark header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul {
+    background-color: #171717;
+}
+
+.dark header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul>li:hover {
+    background-color: #2d347d;
+    box-shadow: none;
+}
+
+.dark header .dark\:even\:bg-discord-blurple-630:nth-child(even) {
+    background-color: #1d1d1d;
+}
+
+/* Table head (Light) */
 thead.bg-discord-blurple-500 {
-    background-color: #4752c4;
+    background-color: #e2e3e5;
+    color: #111827 !important;
+}
+
+thead.bg-discord-blurple-500>tr.\!uppercase {
+    border-bottom: 1px solid #e2e3e5;
+}
+
+/* Table head (Dark) */
+.dark thead.bg-discord-blurple-500 {
+    background-color: #171717;
+    color: #e5e7eb !important;
+}
+
+.dark thead.bg-discord-blurple-500>tr.\!uppercase {
+    border-bottom: 1px solid rgba(75, 85, 99, var(--tw-border-opacity));
 }
 
 .prose thead {
