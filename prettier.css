@@ -1,163 +1,176 @@
-input[type='checkbox']:not(:checked) {
-    background-color: inherit !important;
+:root {
+    --colour-background-primary: #ffffff;
+    --colour-background-secondary: #ffffff;
+    --colour-background-tertiary: #ededed;
+    --colour-text-primary: #111827;
+    --colour-text-secondary: #374151;
+
+    --colour-codeblock-background: #f2f3f5;
+    --colour-header-footer-background: #e2e3e5;
+    --colour-header-text: var(--colour-text-primary);
+    --colour-table-border: var(--colour-header-footer-background);
+
+    --colour-discord-blurple: #4752c4;
+    --colour-discord-blurple-hover: #343b8f;
+    --colour-discord-blurple-selected: #3c45a5;
+
+    --colour-scheme: light;
+}
+
+:root.dark {
+    --colour-background-primary: #1d1d1d;
+    --colour-background-secondary: #191919;
+    --colour-background-tertiary: #171717;
+    --colour-text-primary: #ffffff;
+    --colour-text-secondary: #9ca3af;
+
+    --colour-codeblock-background: var(--colour-background-secondary);
+    --colour-header-footer-background: var(--colour-background-tertiary);
+    --colour-header-text: #e5e7eb;
+    --colour-table-border: rgba(75, 85, 99, var(--tw-border-opacity));
+
+    --colour-scheme: dark;
 }
 
 body {
-    background-color: #e2e3e5 !important;
-    color: #111827;
+    background-color: var(--colour-background-primary);
+    color: var(--colour-text-secondary);
+    color-scheme: var(--colour-scheme);
 }
 
-header.bg-discord-blurple-560,
-footer.bg-discord-blurple-560 {
-    background-color: inherit;
+header,
+footer,
+header a,
+header button,
+footer>div {
+    background-color: var(--colour-header-footer-background) !important;
+    color: var(--colour-header-text) !important;
 }
 
-header *,
-footer * {
+header a.bg-discord-blurple-600 {
+    background-color: var(--colour-discord-blurple-selected) !important;
+    color: #ffffff !important;
+}
+
+header a:hover,
+header button:hover {
+    background-color: var(--colour-discord-blurple-hover) !important;
+    color: #ffffff !important;
+}
+
+header svg {
     color: inherit !important;
 }
 
-header nav>a.bg-discord-blurple-600,
-header nav>a:hover,
-header button:hover {
-    color: white !important;
-}
-
 header #search {
-    background-color: white;
-    color: inherit;
+    background-color: var(--colour-background-primary);
+    color: var(--colour-text-primary);
 }
 
 header #search:focus {
     box-shadow: none;
 }
 
-.dark {
-    color-scheme: dark;
+header #search::placeholder {
+    color: var(--colour-text-secondary);
 }
 
-.dark body {
-    background-color: #171717 !important;
-    color: #e5e7eb;
-}
-
-.dark header #search {
-    background-color: #1d1d1d;
-    color: #fff;
-}
-
-/* Search results flyout (Light) */
-header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md {
-    border: 1px solid #e2e3e5;
+/* Search results flyout menu */
+header div.absolute.rounded-md {
+    border-color: var(--colour-discord-blurple-hover);
     overflow: hidden;
 }
 
-header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul {
-    background-color: white;
-    color: #374151;
+header div.absolute.rounded-md li:nth-child(odd)>a:not(:hover) {
+    background-color: var(--colour-background-primary) !important;
 }
 
-header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul>li:hover {
-    background-color: #2d347d;
-    color: white !important;
+header div.absolute.rounded-md li.ring-1 {
     box-shadow: none;
 }
 
-header .dark\:even\:bg-discord-blurple-630:nth-child(even) {
-    background-color: #e2e3e5;
+/* Sidebar dropdown menus */
+div.sidebar-height ul.absolute li.px-3.py-1:hover {
+    background-color: var(--colour-discord-blurple-hover);
+    color: #ffffff;
 }
 
-/* Search results flyout (Dark) */
-.dark header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md {
-    border: 1px solid black;
-    overflow: hidden;
+/* Sidebar hyperlinks */
+div.sidebar-height>nav a {
+    color: var(--colour-text-secondary) !important;
 }
 
-.dark header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul {
-    background-color: #171717;
+div.sidebar-height>nav a:hover {
+    color: var(--colour-text-primary) !important;
 }
 
-.dark header div.absolute.mt-1.w-full.break-words-legacy.border.bg-discord-blurple-600.rounded-md>ul>li:hover {
-    background-color: #2d347d;
-    box-shadow: none;
+/* Search results checkboxes */
+input[type='checkbox']:not(:checked) {
+    background-color: inherit !important;
 }
 
-.dark header .dark\:even\:bg-discord-blurple-630:nth-child(even) {
-    background-color: #1d1d1d;
+/* Tables */
+div.prose thead {
+    background-color: var(--colour-header-footer-background) !important;
+    color: var(--colour-header-text) !important;
+    word-break: keep-all;
 }
 
-/* Table head (Light) */
-thead.bg-discord-blurple-500 {
-    background-color: #e2e3e5;
-    color: #111827 !important;
+div.prose thead>tr.\!uppercase {
+    border-bottom: 1px solid var(--colour-table-border);
 }
 
-thead.bg-discord-blurple-500>tr.\!uppercase {
-    border-bottom: 1px solid #e2e3e5;
-}
-
-/* Table head (Dark) */
-.dark thead.bg-discord-blurple-500 {
-    background-color: #171717;
-    color: #e5e7eb !important;
-}
-
-.dark thead.bg-discord-blurple-500>tr.\!uppercase {
-    border-bottom: 1px solid rgba(75, 85, 99, var(--tw-border-opacity));
-}
-
-.prose thead {
+div.prose thead {
     border-bottom-width: 0 !important;
 }
 
-/* codeblock */
-.prose pre {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.dark .dark\:prose-light pre,
-.dark .dark\:prose-light code {
-    background-color: #191919 !important;
-}
-
-.dark .dark\:text-gray-300:not(:hover) {
-    color: #9ca3af !important;
-}
-
-/* Horizontal gradient divider */
-.w-full.pr-32.lg\:pr-96 {
-    display: none;
-}
-
-.scroll-to {
-    margin-top: 3.5rem;
-}
-
-.scroll-to:hover {
-    outline-offset: 0.9rem;
-    outline-width: 0.5rem;
-    outline-style: solid;
-    outline-color: #ededed;
-}
-
-.dark .scroll-to:hover {
-    outline-color: #191919;
-}
-
-.scroll-to h3 {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-.scroll-to .pt-6 {
-    padding-top: 0;
+div.prose tbody a,
+div.prose tbody span>code {
+    word-break: keep-all;
 }
 
 /* Table margin */
-.overflow-x-auto.lg\:custom-scroll.border.dark\:border-gray-600.rounded-md.mt-2.mb-8 {
+div.prose .overflow-x-auto.lg\:custom-scroll.border.dark\:border-gray-600.rounded-md.mt-2.mb-8 {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+/* Codeblock */
+div.prose pre,
+div.prose pre>code,
+div.prose code {
+    background-color: var(--colour-codeblock-background) !important;
+}
+
+div.prose pre {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Horizontal gradient divider */
+div.prose div.w-full.pr-32.lg\:pr-96 {
+    display: none;
+}
+
+div.prose div.scroll-to {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+div.prose div.scroll-to:hover {
+    outline-offset: 0.9rem;
+    outline-width: 0.5rem;
+    outline-style: solid;
+    outline-color: var(--colour-background-tertiary);
+}
+
+div.prose div.scroll-to h3 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+div.prose div.scroll-to .pt-6 {
+    padding-top: 0;
 }
 
 a[aria-label='Go to source'] {
