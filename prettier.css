@@ -32,6 +32,10 @@
     --colour-scheme: dark;
 }
 
+:root.dark .prose {
+    --tw-prose-headings: var(--colour-text-primary);
+}
+
 body {
     background-color: var(--colour-background-primary);
     color: var(--colour-text-secondary);
